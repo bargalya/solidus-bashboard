@@ -3,8 +3,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Run `npm i` for first time installation.
+2. Run `npm run mock` for mock server. 
+3. Run `num run start` for running webapp on localhost with mock server. Navigate to  `http://localhost:4200/`.
 
 ## Code scaffolding
 
