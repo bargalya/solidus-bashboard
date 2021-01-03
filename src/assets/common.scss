@@ -7,9 +7,9 @@ $disable-clr: grey;
 $black-background: #191919;
 $font-on-black: white;
 
-@mixin box-style {
+@mixin box-style($padding: 10px) {
   background-color: $card-background;
   box-shadow: $card-box-shadow;
-  padding: 10px;
+  padding: $padding;
   border-radius: 3px;
 }
