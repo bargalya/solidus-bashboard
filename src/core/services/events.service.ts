@@ -1,15 +1,13 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {IEvent} from '../interfaces/IEvent';
-import {map, tap} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 import {Sort} from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventsService {
-  events$: Observable<IEvent[]>;
   originalEvents: IEvent[];
   events: IEvent[];
   currentEvent: IEvent;
@@ -20,12 +18,11 @@ export class EventsService {
   }
 
   getEvents() {
-    this.events$ = this.http.get('mockApi/events').pipe(
+    return this.http.get('mockApi/events').pipe(
       map((results: IEvent[]) => {
         results.map((item, index) => item.id = index);
         return results;
-      }),
-      tap((results: IEvent[]) => this.setEvents(results))
+      })
     );
   }
 
@@ -37,7 +34,6 @@ export class EventsService {
   }
 
   filterEvents(filter: string) {
-
     this.events = this.originalEvents.filter(item => item.status.includes(filter));
   }
 
@@ -61,7 +57,7 @@ export class EventsService {
     }
   }
 
-  private sort(a, b) {
+  private sort(a, b): number {
     if (a < b) {
       return -1;
     } else if (a > b) {

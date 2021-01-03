@@ -1,4 +1,4 @@
-<div class="dashboard" *ngIf="eventsService.events$| async; else loading">
+<div class="dashboard" *ngIf="eventsService.events; else loading">
 <app-top-bar [title]="title" [(isShowChart)]="isShowChart"></app-top-bar>
   <div class="data">
     <div class="event-display">
