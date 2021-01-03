@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {MatSort, MatTable, MatTableDataSource, Sort} from '@angular/material';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {MatTable, Sort} from '@angular/material';
 
 import {IEvent} from '../../core/interfaces/IEvent';
 import {EventsService} from '../../core/services/events.service';
@@ -10,14 +10,12 @@ import {EventsService} from '../../core/services/events.service';
   styleUrls: ['./table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
   @Input() allEvents: IEvent[];
   @Input() currIndex: number;
   @Output() rowClickEvent = new EventEmitter<number>();
-  @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<any>;
 
-  dataSource;
   displayedColumns: string[] = ['timestamp', 'price', 'status'];
 
   constructor(private eventsService: EventsService) {
@@ -25,11 +23,6 @@ export class TableComponent implements OnInit {
 
   onRowClicked(index: number) {
     this.eventsService.changeCurrentEvent(index);
-  }
-
-  ngOnInit(): void {
-    this.dataSource  = new MatTableDataSource(this.allEvents);
-    this.dataSource.sort = this.sort;
   }
 
   applyFilter(filterValue: string) {
