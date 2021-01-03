@@ -1,0 +1,12 @@
+<div class="omni-bar">
+  <div class="summary">{{count}} events are available</div>
+  <mat-form-field>
+    <mat-label>Filter by status</mat-label>
+    <mat-select (selectionChange)="selectedValue($event)">
+      <mat-option [value]="''">Clear filters</mat-option>
+      <mat-option *ngFor="let status of statuses" [value]="status">
+        {{status}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -1,0 +1,11 @@
+<div class="toggle-data-display" (click)="toggle()">
+  <div class="display" *ngIf="!isShowChart">
+    <span>Showing event data</span>
+    <mat-icon title="show event info">info</mat-icon>
+  </div>
+  <div class="display" *ngIf="isShowChart">
+    <span>Showing chart</span>
+    <mat-icon title="show chart">bar_chart</mat-icon>
+  </div>
+
+</div>

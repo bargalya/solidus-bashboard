@@ -1,0 +1,25 @@
+<div class="player">
+  <button mat-icon-button [disabled]="index===0" (click)="change(0)">
+    <mat-icon title="first">skip_previous</mat-icon>
+  </button>
+
+  <button mat-icon-button [disabled]="index===0" (click)="change(index-1)">
+    <mat-icon title="previous">fast_rewind</mat-icon>
+  </button>
+
+  <button *ngIf="!isPlaying" mat-icon-button (click)="onPlay()">
+    <mat-icon title="play">play_arrow</mat-icon>
+  </button>
+
+  <button *ngIf="isPlaying" mat-icon-button  (click)="onPause()">
+    <mat-icon title="pause">pause</mat-icon>
+  </button>
+
+  <button mat-icon-button [disabled]="index===lastIndex" (click)="change(index+1)">
+    <mat-icon title="next">fast_forward</mat-icon>
+  </button>
+
+  <button mat-icon-button [disabled]="index===lastIndex" (click)="change(lastIndex)">
+    <mat-icon title="last">skip_next</mat-icon>
+  </button>
+</div>

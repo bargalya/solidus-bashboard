@@ -1,0 +1,15 @@
+$card-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$card-background: white;
+
+$dashboard-background: #f3f3f3;
+$active-event-clr: #74dc6e;
+$disable-clr: grey;
+$black-background: #191919;
+$font-on-black: white;
+
+@mixin box-style {
+  background-color: $card-background;
+  box-shadow: $card-box-shadow;
+  padding: 10px;
+  border-radius: 3px;
+}

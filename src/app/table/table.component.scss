@@ -1,0 +1,28 @@
+@import "../../assets/common";
+
+.table {
+  @include box-style;
+  .scrollable {
+    height: 380px;
+    overflow-y: scroll;
+
+    table {
+      width: 100%;
+
+      .mat-row {
+        &:hover {
+          background-color: #f3f3f3;
+          cursor: pointer;
+        }
+
+        &:active {
+          background-color: #74dc6e;
+        }
+
+        &.selected {
+          background-color: #74dc6e;
+        }
+      }
+    }
+  }
+}

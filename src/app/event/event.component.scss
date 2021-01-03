@@ -1,0 +1,38 @@
+@import "../../assets/common";
+
+.event {
+  @include box-style;
+  height: 380px;
+
+  .title {
+    font-size: 20px;
+  }
+
+  .data {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .property {
+      display: flex;
+      align-items: center;
+
+      mat-icon {
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .key {
+        font-weight: 600;
+      }
+
+      .value {
+        font-size: 16px;
+      }
+    }
+
+  }
+
+}

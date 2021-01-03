@@ -1,0 +1,28 @@
+<div class="dashboard" *ngIf="eventsService.events$| async; else loading">
+<app-top-bar [title]="title" [(isShowChart)]="isShowChart"></app-top-bar>
+  <div class="data">
+    <div class="event-display">
+      <app-chart
+        *ngIf="isShowChart"
+        [events]="eventsService.events"
+        [currIndex]="eventsService.currIndex"
+        [lastIndex]="eventsService.lastIndex">
+      </app-chart>
+      <app-event
+        *ngIf="!isShowChart"
+        [event]="eventsService.currentEvent">
+      </app-event>
+      <app-player
+        [index]="eventsService.currIndex"
+        [lastIndex]="eventsService.lastIndex">
+      </app-player>
+    </div>
+    <div class="table">
+      <app-table
+        [allEvents]="eventsService.events"
+        [currIndex]="eventsService.currIndex">
+      </app-table>
+    </div>
+  </div>
+</div>
+<ng-template #loading>loading...</ng-template>

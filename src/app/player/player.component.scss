@@ -1,0 +1,14 @@
+@import "../../assets/common";
+
+.player {
+  display: flex;
+  justify-content: center;
+  @include box-style;
+
+  button {
+    color: $active-event-clr;
+    &:disabled {
+      color: $disable-clr;
+    }
+  }
+}

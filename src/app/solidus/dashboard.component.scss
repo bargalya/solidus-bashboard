@@ -1,0 +1,35 @@
+@import "../../assets/common";
+
+.dashboard {
+  background: $dashboard-background;
+  min-height: 100%;
+  height: auto;
+
+  .data {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    .event-display {
+      width: 45%;
+    }
+    .table {
+      width: 45%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .dashboard {
+    .data {
+      flex-direction: column;
+      .event-display {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .table {
+        width: 100%;
+      }
+    }
+
+  }
+}

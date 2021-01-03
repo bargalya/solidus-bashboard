@@ -1,0 +1,9 @@
+@import "../../assets/common";
+
+.chart {
+  @include box-style;
+  .chart-wrapper {
+    position: relative;
+    height: 380px;
+  }
+}

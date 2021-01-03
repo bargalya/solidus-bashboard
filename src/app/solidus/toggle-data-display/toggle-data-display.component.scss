@@ -1,0 +1,11 @@
+:host {
+  display: inline-block;
+}
+
+.toggle-data-display {
+  cursor: pointer;
+  .display {
+    display: flex;
+    align-items: center;
+  }
+}

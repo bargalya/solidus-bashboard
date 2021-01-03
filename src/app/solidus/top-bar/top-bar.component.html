@@ -1,0 +1,5 @@
+<div class="top-bar">
+  <div>{{title}}</div>
+  <app-toggle-data-display [isShowChart]="isShowChart" (isShowChartChange)="this.isShowChartChange.emit($event)">
+  </app-toggle-data-display>
+</div>
